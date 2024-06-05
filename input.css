@@ -1,36 +1,52 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-body{
-    background-color: rgba(0, 0, 0, 0.7);
+body {
     color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
+    position: relative;
+    background: none; /* Remove the background from the body */
 }
 
-.stopwatch{
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://images3.alphacoders.com/134/1345241.png) no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(1.5px);
+    z-index: -1; /* Ensure it is behind other content */
+}
+
+.stopwatch {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px 24px;
     border-radius: 10px;
+    position: relative; /* Ensure it's above the blurred background */
+    z-index: 1;
 }
 
-.timerDisplay{
+.timerDisplay {
     font-size: 50px;
     font-weight: 600;
 }
 
-.buttons{
+.buttons {
     margin-top: 20px;
 }
 
-.btn{
+.btn {
     font-size: 20px;
     background: none;
     border: none;
